@@ -1,0 +1,22 @@
+{
+    "env"           : "NODE_ENV",
+    "app" : {
+        "name"      : "APP_NAME",
+        "url"       : "APP_URL",
+        "port"      : "APP_PORT",
+        "timezone"  : "APP_TIMEOZNE",
+        "notif"     : "APP_NOTIF"
+    },
+    "db" : {
+        "mongoUrl"    : "MONGO_URL"
+    },
+    "filesystem" : {
+        "driver"    : "FS_DRIVER",
+        "key"       : "FS_KEY",
+        "secret"    : "FS_SECRET",
+        "region"    : "FS_REGION",
+        "endpoint"  : "FS_ENDPOINT",
+        "bucket"    : "FS_BUCKET",
+        "port"      : "FS_PORT"
+    }
+}

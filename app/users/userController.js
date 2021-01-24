@@ -13,7 +13,13 @@ exports.index = async (req, res) => {
 }
 
 exports.store = async (req, res) => {
-    const body = { ...req.body, ...res.locals, emailVerStatus: true };
-    const item = await service.save(body);
-    return payload.resCreated(res, undefined, item);
-  };
+    const body = { ...req.body, ...res.locals };
+    const result = await service.save(body);
+    return payload.resCreated(res, undefined, result);
+};
+
+exports.delete = async (req, res) => {
+    const body = { ...req.body, ...req.params };
+    const result = await service.destroy(body);
+    return payload.resSuccess(res, result);
+}

@@ -20,33 +20,11 @@ const userSchema = new mongoose.Schema({
     maxlength: 255,
     trim: true,
   },
-  created: {
-    type: mongoose.Schema({
-      by: {
-        type: String,
-      },
-      at: {
-        type: Date,
-      },
-      userId: {
-        type: String,
-      },
-    }, { _id: false }),
-    default: null,
+  createdAt: {
+    type: Date,
   },
-  updated: {
-    type: mongoose.Schema({
-      by: {
-        type: String,
-      },
-      at: {
-        type: Date,
-      },
-      userId: {
-        type: String,
-      },
-    }, { _id: false }),
-    default: null,
+  updatedAt: {
+    type: Date,
   },
   meta: mongoose.Schema.Types.Mixed,
 }, { timestamps: false });

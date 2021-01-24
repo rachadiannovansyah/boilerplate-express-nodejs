@@ -5,14 +5,22 @@ exports.get = async (query) => {
     getResult.data = await User.get(query);
     getResult.total = await User.getTotal();
     getResult.filtered = await User.getTotalFiltered(query);
+
+    console.log(getResult);
     return getResult;
   };
 
 exports.save = async (context) => {
-    const { currentUser } = context;
-
     // create user in user management
-    const user = await User.customStore({ ...context }, currentUser);
+    const user = await User.customStore({ ...context });
   
     return user;
 };
+
+exports.destroy = async (context) => {
+  const { userId } = context;
+
+  const result = await User.deleteById(userId);
+
+  return result;
+}
